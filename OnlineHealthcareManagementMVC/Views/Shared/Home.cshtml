@@ -1,0 +1,10 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<nav>
+    @Html.ActionLink("Sign In", "SignIn")
+    @Html.ActionLink("Sign up","SignUp")
+</nav>
+<div>
+    @RenderBody()
+</div>

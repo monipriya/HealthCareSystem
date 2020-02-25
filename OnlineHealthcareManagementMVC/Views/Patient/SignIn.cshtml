@@ -1,0 +1,37 @@
+﻿@model OnlineHealthcareManagement.Entity.Account
+
+@{
+    ViewBag.Title = "SignIn";
+    Layout = "~/Views/Shared/Home.cshtml";
+}
+
+<h2>SignIn</h2>
+@using (Html.BeginForm("SignIn", "Patient", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>
+                @Html.Label("Name")
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.Name)
+                @Html.ValidationMessageFor(Model => Model.Name)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Password")
+            </td>
+            <td>
+                @Html.ValidationMessageFor(Model => Model.Password)
+                @Html.TextBoxFor(Model => Model.Password)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="Login" onclick="" />
+            </td>
+        </tr>
+    </table>
+ }
+       
