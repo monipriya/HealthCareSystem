@@ -16,7 +16,7 @@ namespace OnlineHealthcareManagementMVC
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Patient", action = "SignUp", id = UrlParameter.Optional }
+                defaults: new { controller = "Patient", action = "SignIn", id = UrlParameter.Optional }
             );
         }
     }

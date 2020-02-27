@@ -1,26 +1,23 @@
-﻿@model OnlineHealthcareManagement.Entity.Account
-
+﻿@model OnlineHealthcareManagementMVC.Models.SigInModel
 @{
     ViewBag.Title = "SignIn";
-    Layout = "~/Views/Shared/Home.cshtml";
 }
-
 <h2>SignIn</h2>
 @using (Html.BeginForm("SignIn", "Patient", FormMethod.Post))
 {
     <table>
         <tr>
             <td>
-                @Html.Label("Name")
+                @Html.LabelFor(Model => Model.UserName)
             </td>
             <td>
-                @Html.TextBoxFor(Model => Model.Name)
-                @Html.ValidationMessageFor(Model => Model.Name)
+                @Html.TextBoxFor(Model => Model.UserName)
+                @Html.ValidationMessageFor(Model => Model.UserName)
             </td>
         </tr>
         <tr>
             <td>
-                @Html.Label("Password")
+                @Html.LabelFor(Model => Model.Password)
             </td>
             <td>
                 @Html.ValidationMessageFor(Model => Model.Password)
@@ -33,5 +30,4 @@
             </td>
         </tr>
     </table>
- }
-       
+}

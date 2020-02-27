@@ -1,101 +1,98 @@
-﻿@model OnlineHealthcareManagement.Entity.Account
-
+﻿@model OnlineHealthcareManagementMVC.Models.UserDetails
 @{
     ViewBag.Title = "SignUp";
-    Layout = "~/Views/Shared/Home.cshtml";
 }
-<h2>SignUp</h2>
 @using (Html.BeginForm("SignUp", "Patient", FormMethod.Post))
 {
     @Html.ValidationSummary(true)
     <table>
         <tr>
             <td>
-                @Html.Label("Name")
-            </td>
-                <td>
-                    @Html.TextBoxFor(Model => Model.Name)
-                    @Html.ValidationMessageFor(Model=>Model.Name)
-                </td>
-            </tr>
-        <tr>
-            <td>
-                @Html.Label("Dob")
+                @Html.LabelFor(Model => Model.Name)
             </td>
             <td>
-                @Html.TextBoxFor(Model=>Model.Dob)
-                @Html.ValidationMessageFor(Model=>Model.Dob)
-            </td>
-            </tr>
-        <tr>
-            <td>
-                @Html.Label("bloodGroup")
-            </td>
-            <td>
-                @Html.TextBoxFor(Model => Model.BloodGroup)
-                @Html.ValidationMessageFor(Model=>Model.BloodGroup)
-            </td>
-           </tr>
-        <tr>
-           <td>
-                @Html.Label("Gender")
-            </td>
-            <td>
-              @Html.RadioButtonFor(Model=>Model.Sex,"Male")Male
-             @Html.RadioButtonFor(Model=>Model.Sex,"Female")Female
-                @Html.ValidationMessageFor(Model=>Model.Sex)
-            </td>
-            </tr>
-        <tr>
-            <td>
-                @Html.Label("Number")
-            </td>
-            <td>
-                @Html.TextBoxFor(Model=>Model.MobileNumber)
-                @Html.ValidationMessageFor(Model=>Model.MobileNumber)
-            </td>
-            </tr>
-        <tr>
-            <td>
-                @Html.Label("Location")
-            </td>
-            <td>
-                @Html.TextBoxFor(Model=>Model.City)
-                @Html.ValidationMessageFor(Model=>Model.City)
-            </td>
-            </tr>
-        <tr>
-            <td>
-                @Html.Label("mailId")
-            </td>
-            <td>
-                @Html.TextBoxFor(Model=>Model.MailId)
-                @Html.ValidationMessageFor(Model=>Model.MailId)
-            </td>
-            </tr>
-            <tr>
-            <td>
-                @Html.Label("Password")
-            </td>
-            <td>
-                @Html.PasswordFor(Model=>Model.Password)
-                @Html.ValidationMessageFor(Model=>Model.Password)
+                @Html.TextBoxFor(Model => Model.Name)
+                @Html.ValidationMessageFor(Model => Model.Name)
             </td>
         </tr>
         <tr>
             <td>
-                @Html.Label("Confirm Password")
+                @Html.LabelFor(Model => Model.Dob)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.Dob)
+                @Html.ValidationMessageFor(Model => Model.Dob)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.BloodGroup)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.BloodGroup)
+                @Html.ValidationMessageFor(Model => Model.BloodGroup)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.Sex)
+            </td>
+            <td>
+                @Html.RadioButtonFor(Model => Model.Sex, "Male")Male
+                @Html.RadioButtonFor(Model => Model.Sex, "Female")Female
+                @Html.ValidationMessageFor(Model => Model.Sex)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.MobileNumber)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.MobileNumber)
+                @Html.ValidationMessageFor(Model => Model.MobileNumber)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.City)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.City)
+                @Html.ValidationMessageFor(Model => Model.City)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.MailId)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.MailId)
+                @Html.ValidationMessageFor(Model => Model.MailId)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.Password)
+            </td>
+            <td>
+                @Html.PasswordFor(Model => Model.Password)
+                @Html.ValidationMessageFor(Model => Model.Password)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.ConfirmPassword)
             </td>
             <td>
                 @Html.PasswordFor(Model => Model.ConfirmPassword)
                 @Html.ValidationMessageFor(Model => Model.ConfirmPassword)
             </td>
         </tr>
-<tr>
-    <td>
-        <input type="submit" value="Submit" />
-        
-    </td>
-</tr>
+        <tr>
+            <td>
+                <input type="submit" value="Submit" />
+            </td>
+        </tr>
     </table>
 }
+

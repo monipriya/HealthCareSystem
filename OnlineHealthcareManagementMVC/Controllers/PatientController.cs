@@ -1,12 +1,13 @@
 ﻿using OnlineHealthcareManagement.BL;
 using OnlineHealthcareManagement.Entity;
+using OnlineHealthcareManagementMVC.Models;
 using System.Web.Mvc;
 
 namespace OnlineHealthcareManagementMVC.Controllers
 {
     public class PatientController : Controller
     {
-        public ActionResult Index() 
+        public ActionResult Index()
         {
             return View();
         }
@@ -16,25 +17,41 @@ namespace OnlineHealthcareManagementMVC.Controllers
             return View();
         }
         [HttpPost]
+        
         public ActionResult SignUp(Account account)
         {
-            
             if (ModelState.IsValid)
             {
-                //UserBL.GetUsers();
-                UserBL.AddCustomer(account);
-                Response.Write("Register Successfull"); 
+                UserDetails user = new UserDetails();
+                account.BloodGroup = user.BloodGroup;
+                account.Name = user.Name;
+                account.Sex = user.Sex;
+                account.MailId = user.MailId;
+                account.Dob = user.Dob;
+                account.MobileNumber = user.MobileNumber;
+                account.Password = user.Password;
+                account.City = user.City;
+               // UserBL.AddCustomer();
+                Response.Write("Register Successfull");
                 return RedirectToAction("SignIn");
             }
             return View();
         }
+        public ActionResult SignIn()
+        {
+            return View();
+        }
+        [HttpPost]
         public ActionResult SignIn(Account account)
         {
             if (ModelState.IsValid)
             {
+                SigInModel signIn = new SigInModel();
+                account.Name = signIn.UserName;
+                account.Password = signIn.Password;
                 Response.Write("Login succesful");
             }
             return View();
         }
-     }
+    }
 }
