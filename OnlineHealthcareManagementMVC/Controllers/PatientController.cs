@@ -18,11 +18,11 @@ namespace OnlineHealthcareManagementMVC.Controllers
         }
         [HttpPost]
         
-        public ActionResult SignUp(Account account)
+        public ActionResult SignUp(UserDetails user)
         {
             if (ModelState.IsValid)
             {
-                UserDetails user = new UserDetails();
+                Account account = new Account();
                 account.BloodGroup = user.BloodGroup;
                 account.Name = user.Name;
                 account.Sex = user.Sex;
@@ -31,7 +31,7 @@ namespace OnlineHealthcareManagementMVC.Controllers
                 account.MobileNumber = user.MobileNumber;
                 account.Password = user.Password;
                 account.City = user.City;
-               // UserBL.AddCustomer();
+                UserBL.AddCustomer(account);
                 Response.Write("Register Successfull");
                 return RedirectToAction("SignIn");
             }

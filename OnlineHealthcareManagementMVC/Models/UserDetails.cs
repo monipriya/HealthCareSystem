@@ -11,7 +11,7 @@ namespace OnlineHealthcareManagementMVC.Models
         public string Name { get; set; }
 
         [DataType(DataType.Text)]
-        [Required(ErrorMessage = "Please select the gender")]
+        [Required(ErrorMessage = "Please selct the gender")]
         [Display(Name = "Sex")]
         public string Sex { get; set; }
 
@@ -35,7 +35,7 @@ namespace OnlineHealthcareManagementMVC.Models
 
         [DataType(DataType.EmailAddress)]
         [Required(ErrorMessage = "Enter the email address")]
-        [Key]
+        
         public string MailId { get; set; }
 
         [DataType(DataType.Password)]
@@ -43,19 +43,19 @@ namespace OnlineHealthcareManagementMVC.Models
         public string Password { get; set; }
         [Required]
         public string ConfirmPassword { get; set; }
+        private string role = "User";
+        public string Role
+        {
+            get
+            {
+                return role;
+            }
+            set
+            {
+                value = role;
+            }
+        }
 
-        //public UserDetails(string name, string sex, DateTime dob, string bloodGroup, long mobilenumber, string city, string mailID, string password)
-        //{
-        //    this.Name = name;
-        //    this.Sex = sex;
-        //    this.Dob = dob;
-        //    this.BloodGroup = bloodGroup;
-        //    this.MobileNumber = mobilenumber;
-        //    this.City = city;
-        //    this.MailId = mailID;
-        //    this.Password = password;
-
-        //}
         public UserDetails()
         {
 
