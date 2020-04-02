@@ -3,15 +3,20 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+   
 </head>
-<body >
-    <nav>
-        @Html.ActionLink("Sign In", "SignIn")
-        @Html.ActionLink("Sign up", "SignUp")
-    </nav>
+<body class="image" >
+    <link href="~/CSS/Design.css" type="text/css" rel="stylesheet" />
     <div>
-        
+        <nav class="nav-bar">
+            @Html.ActionLink("Home", "Index", "Healthcare")
+            @Html.ActionLink("Login", "SignIn", "Patient")
+            @Html.ActionLink("Sign up", "SignUp", "Patient")
+            @Html.ActionLink("view Services","Services","Healthcare")
+        </nav>
+        <div>
             @RenderBody()
-</div>
+        </div>
+    </div>
 </body>
 </html>

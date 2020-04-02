@@ -1,0 +1,33 @@
+﻿body {
+}
+.head{
+    background-color:darkseagreen;
+    text-align:center;
+}
+.main{
+    padding:20px;
+    background-color:aqua;
+}
+.image{
+    background-image:url("HealthcareImage.jpg");
+    background-attachment:fixed;
+    background-size:100% 100%;
+}
+.btn {
+  background-color:greenyellow;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  border-radius:15px;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.table{
+    text-align:center;
+}
+.nav-bar{
+    border-radius:15px;
+    padding-left:10px;
+    padding-right:10px;
+}

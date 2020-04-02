@@ -54,13 +54,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBContext.cs" />
-    <Compile Include="Migrations\202002280949427_column.cs" />
-    <Compile Include="Migrations\202002280949427_column.designer.cs">
-      <DependentUpon>202002280949427_column.cs</DependentUpon>
+    <Compile Include="DoctorRepository.cs" />
+    <Compile Include="Migrations\202003130537056_InitialCreate.cs" />
+    <Compile Include="Migrations\202003130537056_InitialCreate.designer.cs">
+      <DependentUpon>202003130537056_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202002280954263_columnUpdate.cs" />
-    <Compile Include="Migrations\202002280954263_columnUpdate.designer.cs">
-      <DependentUpon>202002280954263_columnUpdate.cs</DependentUpon>
+    <Compile Include="Migrations\202003130738380_create.cs" />
+    <Compile Include="Migrations\202003130738380_create.designer.cs">
+      <DependentUpon>202003130738380_create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003131117047_vgy.cs" />
+    <Compile Include="Migrations\202003131117047_vgy.designer.cs">
+      <DependentUpon>202003131117047_vgy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003131154508_re.cs" />
+    <Compile Include="Migrations\202003131154508_re.designer.cs">
+      <DependentUpon>202003131154508_re.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="UserRepositary.cs" />
@@ -81,11 +90,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002280949427_column.resx">
-      <DependentUpon>202002280949427_column.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003130537056_InitialCreate.resx">
+      <DependentUpon>202003130537056_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002280954263_columnUpdate.resx">
-      <DependentUpon>202002280954263_columnUpdate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202003130738380_create.resx">
+      <DependentUpon>202003130738380_create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003131117047_vgy.resx">
+      <DependentUpon>202003131117047_vgy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003131154508_re.resx">
+      <DependentUpon>202003131154508_re.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

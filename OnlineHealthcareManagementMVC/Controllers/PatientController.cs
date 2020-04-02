@@ -1,10 +1,12 @@
-﻿using OnlineHealthcareManagement.BL;
+﻿using AutoMapper;
+using OnlineHealthcareManagement.BL;
 using OnlineHealthcareManagement.Entity;
 using OnlineHealthcareManagementMVC.Models;
+using System;
 using System.Web.Mvc;
-
 namespace OnlineHealthcareManagementMVC.Controllers
 {
+    [HandleError]
     public class PatientController : Controller
     {
         public ActionResult Index()
@@ -17,24 +19,32 @@ namespace OnlineHealthcareManagementMVC.Controllers
             return View();
         }
         [HttpPost]
-        
-        public ActionResult SignUp(UserDetails user)
+
+        public ActionResult SignUp(SignUp user)
         {
             if (ModelState.IsValid)
             {
-                Account account = new Account();
-                account.BloodGroup = user.BloodGroup;
-                account.Name = user.Name;
-                account.Sex = user.Sex;
-                account.MailId = user.MailId;
-                account.Dob = user.Dob;
-                account.MobileNumber = user.MobileNumber;
-                account.Password = user.Password;
-                account.City = user.City;
-                UserBL.AddCustomer(account);
-                Response.Write("Register Successfull");
+                var Register = Mapper.Map<SignUp, Account>(user);
+                UserBL.AddCustomer(Register);
                 return RedirectToAction("SignIn");
             }
+            
+            //if (ModelState.IsValid)
+            //{
+            //    Account account = new Account();
+            //    account.BloodGroup = user.BloodGroup;
+            //    account.Name = user.Name;
+            //    account.Sex = user.Sex;
+            //    account.MailId = user.MailId;
+            //    account.Dob = user.Dob;
+            //    account.MobileNumber = user.MobileNumber;
+            //    account.Password = user.Password;
+            //    account.City = user.City;
+            //    account.Role = user.Role;
+            //    UserBL.AddCustomer(account);
+            //    return RedirectToAction("SignIn");
+            //}
+            //TempData["message"] = "Register Successful";
             return View();
         }
         public ActionResult SignIn()
@@ -42,14 +52,29 @@ namespace OnlineHealthcareManagementMVC.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult SignIn(Account account)
+        public ActionResult SignIn(SigInModel signIn)
         {
-            if (ModelState.IsValid)
+            Account account = new Account()
             {
-                SigInModel signIn = new SigInModel();
-                account.Name = signIn.UserName;
-                account.Password = signIn.Password;
-                Response.Write("Login succesful");
+                MailId = signIn.UserName,
+                Password = signIn.Password,
+            };
+            account = UserBL.Login(account);
+            
+            try
+            {
+                if (account.Role  == "Admin")
+                {
+                    return RedirectToAction("DisplayDoctorDetails", "Admin");
+                }
+                else 
+                {
+                    return RedirectToAction("Index", "Patient");
+                }
+            }
+            catch (Exception)
+            {
+                Response.Write("Enter the correct username and password");
             }
             return View();
         }

@@ -1,0 +1,88 @@
+﻿@model OnlineHealthcareManagementMVC.Models.DoctorModel
+
+@{
+    ViewBag.Title = "AddDoctorDetails";
+}
+<h2>Add Doctor Details</h2>
+@using (Html.BeginForm("AddDoctorDetails", "Admin", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.Name)
+            </td>
+            <td>
+                @Html.TextBoxFor(Model => Model.Name)
+                @Html.ValidationMessageFor(Model => Model.Name)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.MailId)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(Model => Model.MailId)
+                @Html.TextBoxFor(Model => Model.MailId)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.Password)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(Model => Model.Password)
+                @Html.TextBoxFor(Model => Model.Password)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.Specialist)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(Model => Model.Specialist)
+                @Html.TextBoxFor(Model => Model.Specialist)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.MobileNumber)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(Model => Model.MobileNumber)
+                @Html.TextBoxFor(Model => Model.MobileNumber)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.AvailableFromTime)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(Model => Model.AvailableFromTime)
+                @Html.TextBoxFor(Model => Model.AvailableFromTime)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.AvailableToTime)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(Model => Model.AvailableToTime)
+                @Html.TextBoxFor(Model => Model.AvailableToTime)
+            </td>
+        </tr>
+        <tr>
+            @*<td>
+                @Html.ActionLink("Edit", "Edit", new { id =  }) |
+                @Html.ActionLink("Delete", "Delete", new { id = emp.EmployeeId })
+            </td>*@
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Add" />
+            </td>
+        </tr>
+    </table>
+}
+
+
+

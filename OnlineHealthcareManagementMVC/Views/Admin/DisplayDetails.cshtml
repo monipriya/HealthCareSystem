@@ -1,0 +1,30 @@
+﻿@model IEnumerable<OnlineHealthcareManagement.Entity.DoctorDetails>
+
+@{
+    ViewBag.Title = "DisplayDetails";
+}
+
+<h2>DisplayDetails</h2>
+<table cellspacing="0" border="1">
+    <tr>
+        <th>Doctor Name</th>
+        <th>Doctor specialization</th>
+        <th>Doctor AvailableFromTime</th>
+        <th>Doctor Available till</th>
+        <th>Mobile number</th>
+    </tr>
+    @foreach (var Detail in Model)
+    {
+        <tr>
+            <td>@Detail.Name</td>
+            <td>@Detail.Specialist</td>
+            <td>@Detail.AvailableFromTime</td>
+            <td>@Detail.AvailableToTime</td>
+            <td>@Detail.MobileNumber</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = Detail.DoctorId })
+                @Html.ActionLink("Remove", "DeleteDoctorData", new { id = Detail.DoctorId}, new { onclick = "return confirm('Are sure wants to delete?');" })
+            </td>
+        </tr>
+    }
+</table>

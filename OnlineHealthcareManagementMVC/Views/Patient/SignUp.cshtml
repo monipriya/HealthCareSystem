@@ -1,11 +1,15 @@
-﻿@model OnlineHealthcareManagementMVC.Models.UserDetails
+﻿@model OnlineHealthcareManagementMVC.Models.SignUp
 @{
     ViewBag.Title = "SignUp";
 }
+<script src="~/scripts/jquery-1.10.2.min.js"></script>
+<script src="~/scripts/jquery.validate.min.js"></script>
+<script src="~/scripts/jquery.validate.unobtrusive.min.js"></script>
+<h2>SignUp</h2>
 @using (Html.BeginForm("SignUp", "Patient", FormMethod.Post))
 {
     @Html.ValidationSummary(true)
-    <table>
+    <table> 
         <tr>
             <td>
                 @Html.LabelFor(Model => Model.Name)
@@ -20,7 +24,8 @@
                 @Html.LabelFor(Model => Model.Dob)
             </td>
             <td>
-                @Html.TextBoxFor(Model => Model.Dob)
+               
+                @Html.EditorFor(Model => Model.Dob)
                 @Html.ValidationMessageFor(Model => Model.Dob)
             </td>
         </tr>
@@ -95,4 +100,5 @@
         </tr>
     </table>
 }
+
 

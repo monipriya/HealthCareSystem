@@ -1,0 +1,77 @@
+﻿@model OnlineHealthcareManagementMVC.Models.DoctorModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+@Html.ActionLink("Display Events","DisplayDetails")
+<h2>Edit</h2>
+@using (Html.BeginForm("Edit", "Admin", FormMethod.Post))
+{
+    @Html.HiddenFor(Model => Model.MailId)
+    @*@Html.HiddenFor(Model=>Model.Password)*@
+
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(model=>model.MailId)
+            </td>
+            <td>
+                @Html.ValueFor(model=>model.MailId)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.Name)
+
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.Specialist)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.Specialist)
+                @Html.ValidationMessageFor(model => model.Specialist)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.AvailableFromTime)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.AvailableFromTime)
+                @Html.ValidationMessageFor(model => model.AvailableFromTime)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.AvailableToTime)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.AvailableToTime)
+                @Html.ValidationMessageFor(model => model.AvailableToTime)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.MobileNumber)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.MobileNumber)
+                @Html.ValidationMessageFor(model => model.MobileNumber)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Update">
+            </td>
+        </tr>
+
+    </table>
+}
+
+

@@ -10,6 +10,7 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "OnlineHealthcareManagementSystem.DAL.DBContext";
         }
 
         protected override void Seed(OnlineHealthcareManagementSystem.DAL.DBContext context)

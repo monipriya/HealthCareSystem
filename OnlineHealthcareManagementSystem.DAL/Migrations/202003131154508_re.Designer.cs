@@ -7,13 +7,13 @@ namespace OnlineHealthcareManagementSystem.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class columnUpdate : IMigrationMetadata
+    public sealed partial class re : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(columnUpdate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(re));
         
         string IMigrationMetadata.Id
         {
-            get { return "202002280954263_columnUpdate"; }
+            get { return "202003131154508_re"; }
         }
         
         string IMigrationMetadata.Source

@@ -14,5 +14,13 @@ namespace OnlineHealthcareManagement.BL
         {
             return UserRepositary.GetUsers();
         }
+        public  static Account  Login(Account account)
+        {
+            return UserRepositary.ValidateUser(account);
+        }
+        public static void GetRole(string role)
+        {
+            UserRepositary.GetUsers();
+        }
     }
 }

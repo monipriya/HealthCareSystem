@@ -2,10 +2,10 @@
 @{
     ViewBag.Title = "SignIn";
 }
-<h2>SignIn</h2>
+ <h2>SignIn</h2>
 @using (Html.BeginForm("SignIn", "Patient", FormMethod.Post))
 {
-    <table>
+    <table class="table">
         <tr>
             <td>
                 @Html.LabelFor(Model => Model.UserName)
@@ -21,12 +21,23 @@
             </td>
             <td>
                 @Html.ValidationMessageFor(Model => Model.Password)
-                @Html.TextBoxFor(Model => Model.Password)
+                @Html.PasswordFor(Model => Model.Password)
             </td>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.Role)
+            </td>
+            <td>
+                @Html.RadioButtonFor(Model => Model.Role, "Doctor")Doctor
+                @Html.RadioButtonFor(Model => Model.Role, "User")User
+                @Html.RadioButtonFor(Model=>Model.Role,"Admin")Admin;
+            </td>
+        </tr>
+
         </tr>
         <tr>
             <td>
-                <input type="button" value="Login"/>
+                <input type="submit" value="Login" class="btn"/>
             </td>
         </tr>
     </table>

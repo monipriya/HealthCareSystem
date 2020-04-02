@@ -3,10 +3,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace OnlineHealthcareManagementMVC.Models
 {
-    public class UserDetails
+    public class SignUp
     {
         [DataType(DataType.Text)]
-        [Required(ErrorMessage = "Please enter the name"), MaxLength(30)]
+        [MaxLength(35)]
+        [Required(ErrorMessage = "Please enter your first name")]
+        [RegularExpression("[A-Z][a-z][^(@#&<>~;$^%{}?][^0-9]{0,35}", ErrorMessage = "Please enter a valid first name")]
         [Display(Name = "UserName")]
         public string Name { get; set; }
 
@@ -27,6 +29,7 @@ namespace OnlineHealthcareManagementMVC.Models
 
         [DataType(DataType.PhoneNumber)]
         [Required(ErrorMessage = "Enter the number")]
+        [RegularExpression("^[6-9][0-9]{9}$", ErrorMessage = "Please enter a valid mobile number")]
         public long MobileNumber { get; set; }
 
         [DataType(DataType.Text)]
@@ -35,13 +38,14 @@ namespace OnlineHealthcareManagementMVC.Models
 
         [DataType(DataType.EmailAddress)]
         [Required(ErrorMessage = "Enter the email address")]
-        
         public string MailId { get; set; }
 
         [DataType(DataType.Password)]
         [Required(ErrorMessage = "Enter the password")]
         public string Password { get; set; }
+
         [Required]
+        [Compare("Password", ErrorMessage = "Those password didn't match, Try again ")]
         public string ConfirmPassword { get; set; }
         private string role = "User";
         public string Role
@@ -56,7 +60,7 @@ namespace OnlineHealthcareManagementMVC.Models
             }
         }
 
-        public UserDetails()
+        public SignUp()
         {
 
         }

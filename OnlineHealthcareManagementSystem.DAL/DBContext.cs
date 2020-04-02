@@ -11,6 +11,8 @@ public DBContext() : base("DBConnection")
 
         }
         public DbSet<Account> UserDB { get; set; }
+        public DbSet<DoctorDetails> DoctorDB { get; set; }
     }
+   
 
 }
