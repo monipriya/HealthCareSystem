@@ -21,7 +21,7 @@ namespace OnlineHealthcareManagementSystem.DAL
         //    using (DBContext context = new DBContext())
         //    {
         //         context.UserDB.Where(find => find.Role == account.Role).SingleOrDefault;
-        //    }
+        //   context.UserDb.Where(find.Role== }
         //}
         public static Account ValidateUser(Account account)
         {

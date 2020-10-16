@@ -63,7 +63,7 @@ namespace OnlineHealthcareManagementMVC.Controllers
         //    return RedirectToAction("DisplayDetails");
         //}
         public ActionResult Homepage()
-        {
+        { 
             return View();
         }
     }

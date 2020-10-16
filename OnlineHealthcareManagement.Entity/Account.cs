@@ -53,7 +53,7 @@ namespace OnlineHealthcareManagement.Entity
         }
         public static string GeneratePatientId(long mobileNumber, string name)
         {
-            return "P" + mobileNumber.ToString().Substring(0, 2) + name.Substring(2, 4) + mobileNumber.ToString().Substring(4, 6) + name.Substring(0, 2);
+            return "P" + mobileNumber.ToString().Substring(0, 2) + name.Substring(0, 4) ;
         }
         //public Account(string name, string sex, DateTime dob, string bloodGroup, long mobilenumber, string city, string mailID, string password)
         //{
